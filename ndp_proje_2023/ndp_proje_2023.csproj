@@ -48,11 +48,17 @@
   <ItemGroup>
     <Compile Include="anaYemek.cs" />
     <Compile Include="depo.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="siparisekrani.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="siparisekrani.Designer.cs">
+      <DependentUpon>siparisekrani.cs</DependentUpon>
+    </Compile>
+    <Compile Include="girisekrani.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="girisekrani.Designer.cs">
+      <DependentUpon>girisekrani.cs</DependentUpon>
     </Compile>
     <Compile Include="icecek.cs" />
     <Compile Include="meyve.cs" />
@@ -62,9 +68,24 @@
     <Compile Include="siparis.cs" />
     <Compile Include="tatli.cs" />
     <Compile Include="urun.cs" />
+    <Compile Include="yeniurunformu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="yeniurunformu.Designer.cs">
+      <DependentUpon>yeniurunformu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="yetkiliekrani.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="yetkiliekrani.Designer.cs">
+      <DependentUpon>yetkiliekrani.cs</DependentUpon>
+    </Compile>
     <Compile Include="yiyecek.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="siparisekrani.resx">
+      <DependentUpon>siparisekrani.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="girisekrani.resx">
+      <DependentUpon>girisekrani.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -75,6 +96,13 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="yeniurunformu.resx">
+      <DependentUpon>yeniurunformu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="yetkiliekrani.resx">
+      <DependentUpon>yetkiliekrani.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\DataSources\anaYemek.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

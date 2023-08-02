@@ -30,7 +30,7 @@ namespace ndp_proje_2023
 
         public void SiparisleriYazdir(List<string> siparisListesi)
         {
-            Form1 form1 = (Form1)Application.OpenForms["Form1"];
+            siparisekrani form1 = (siparisekrani)Application.OpenForms["Form1"];
             form1.siparistxtbox.Text = string.Join(Environment.NewLine, siparisListesi);
         }
     }

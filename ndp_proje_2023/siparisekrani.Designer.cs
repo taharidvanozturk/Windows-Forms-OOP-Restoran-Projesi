@@ -1,6 +1,6 @@
 ﻿namespace ndp_proje_2023
 {
-    partial class Form1
+    partial class siparisekrani
     {
         /// <summary>
         /// Required designer variable.
@@ -447,7 +447,7 @@
             this.Controls.Add(this.siparistxtbox);
             this.Controls.Add(this.groupBox2);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Sipariş Oluşturma Ekranı";
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);

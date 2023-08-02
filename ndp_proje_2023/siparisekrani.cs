@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace ndp_proje_2023
 {
-    public partial class Form1 : Form
+    public partial class siparisekrani : Form
     {
-        public Form1()
+        public siparisekrani()
         {
             InitializeComponent();
         }
