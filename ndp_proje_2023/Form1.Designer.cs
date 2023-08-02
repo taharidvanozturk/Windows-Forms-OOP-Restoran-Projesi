@@ -480,7 +480,6 @@
         private System.Windows.Forms.Button kunefebtn;
         private System.Windows.Forms.Button magnolyabtn;
         private System.Windows.Forms.Button KemalPasabtn;
-        private System.Windows.Forms.TextBox siparistxtbox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button etmkrnbtn;
         private System.Windows.Forms.Button tvkplvbtn;
@@ -494,6 +493,7 @@
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Button silButton;
         private System.Windows.Forms.Button siparisonaybtn;
+        internal System.Windows.Forms.TextBox siparistxtbox;
     }
 }
 

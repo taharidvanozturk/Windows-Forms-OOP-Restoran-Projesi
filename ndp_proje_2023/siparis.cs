@@ -16,9 +16,9 @@ namespace ndp_proje_2023
             foreach (var secilen in secilenler)
             {
                 siparisListesi.Add(secilen);
+
             }
-            // siparisListesi.Add(siparis);
-            //siparistxtbox.Text = string.Join(Environment.NewLine, siparisListesi);
+            SiparisleriYazdir(siparisListesi);
         }
         public void yemekSil(List<string> siparisListesi, List<string> secilenler)
         {
@@ -28,10 +28,10 @@ namespace ndp_proje_2023
             }
         }
 
-        public void SiparisleriYazdir()
+        public void SiparisleriYazdir(List<string> siparisListesi)
         {
-
-
+            Form1 form1 = (Form1)Application.OpenForms["Form1"];
+            form1.siparistxtbox.Text = string.Join(Environment.NewLine, siparisListesi);
         }
     }
 }
