@@ -30,9 +30,9 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.urunaditxtbox = new System.Windows.Forms.TextBox();
             this.uruniceriktxtbox = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.uruneklebtn = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -56,12 +56,12 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Ürünün İçeriği:";
             // 
-            // textBox1
+            // urunaditxtbox
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 37);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(166, 20);
-            this.textBox1.TabIndex = 3;
+            this.urunaditxtbox.Location = new System.Drawing.Point(12, 37);
+            this.urunaditxtbox.Name = "urunaditxtbox";
+            this.urunaditxtbox.Size = new System.Drawing.Size(166, 20);
+            this.urunaditxtbox.TabIndex = 3;
             // 
             // uruniceriktxtbox
             // 
@@ -71,16 +71,17 @@
             this.uruniceriktxtbox.Size = new System.Drawing.Size(166, 147);
             this.uruniceriktxtbox.TabIndex = 4;
             // 
-            // button1
+            // uruneklebtn
             // 
-            this.button1.BackColor = System.Drawing.Color.Lime;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button1.Location = new System.Drawing.Point(189, 37);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(231, 61);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Ürün Ekle";
-            this.button1.UseVisualStyleBackColor = false;
+            this.uruneklebtn.BackColor = System.Drawing.Color.Lime;
+            this.uruneklebtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.uruneklebtn.Location = new System.Drawing.Point(189, 37);
+            this.uruneklebtn.Name = "uruneklebtn";
+            this.uruneklebtn.Size = new System.Drawing.Size(231, 61);
+            this.uruneklebtn.TabIndex = 5;
+            this.uruneklebtn.Text = "Ürün Ekle";
+            this.uruneklebtn.UseVisualStyleBackColor = false;
+            this.uruneklebtn.Click += new System.EventHandler(this.button1_Click);
             // 
             // label2
             // 
@@ -99,9 +100,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(463, 331);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.uruneklebtn);
             this.Controls.Add(this.uruniceriktxtbox);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.urunaditxtbox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Name = "yeniurunformu";
@@ -115,9 +116,9 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox uruniceriktxtbox;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button uruneklebtn;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox urunaditxtbox;
     }
 }

@@ -1,39 +1,26 @@
-﻿#### SALATALAR ########
-Yeşil Salata
-Coban Salata
-Sezar Salata
-İstanbul Salata
-Van Salata
-#######################
-
-#### iÇECEKLER ########
-Cola
-Fanta
-Ayran
-Su
-Çay
-######################
-
-#### MEYVELER ########
-Elma
-Armut
-Muz
-Kivi
-Ejder Meyvesi
-#####################
-
-#### TATLILAR #######
-Kemal Paşa
-Magnolya
-Künefe
-Waffle
-Tavuk Göğsü
-#####################
-
-#### ANA YEMEKLER####
-Et Sote
-Tantuni
-Mantı
-Tavuklu Pilav
-Etli Makarna
-#####################
+## sdf ##
+## Yeşil Salata ##
+## Çoban Salata ##
+## Sezar Salata ##
+## İstanbul Salata ##
+## Van Salata ##
+## Cola ##
+## Fanta ##
+## Ayran ##
+## Su ##
+## Çay ##
+## Elma ##
+## Armut ##
+## Muz ##
+## Kivi ##
+## Ejder Meyvesi ##
+## Kemal Paşa ##
+## Magnolya ##
+## Künefe ##
+## Waffle ##
+## Et Sote ##
+## Tantuni ##
+## Mantı ##
+## Tavuklu Pilav ##
+## Etli Makarna ##
+## Tavuk Göğsü ##

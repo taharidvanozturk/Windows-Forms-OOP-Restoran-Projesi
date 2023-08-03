@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.stokeklebtn = new System.Windows.Forms.Button();
@@ -36,9 +35,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.stoktxtbox = new System.Windows.Forms.TextBox();
             this.stokgorbtn = new System.Windows.Forms.Button();
-            this.anaYemekBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.anaYemekBindingSource)).BeginInit();
+            this.label3 = new System.Windows.Forms.Label();
+            this.depotxtbox = new System.Windows.Forms.TextBox();
+            this.depoeklebtn = new System.Windows.Forms.Button();
+            this.depogorbtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // comboBox1
@@ -136,25 +137,64 @@
             this.stokgorbtn.UseVisualStyleBackColor = true;
             this.stokgorbtn.Click += new System.EventHandler(this.stokgorbtn_Click);
             // 
-            // anaYemekBindingSource
-            // 
-            this.anaYemekBindingSource.DataSource = typeof(ndp_proje_2023.anaYemek);
-            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(492, 29);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(267, 33);
             this.button1.TabIndex = 23;
-            this.button1.Text = "Yeni Bir Ürün Eklemek İçin Tıklayın";
+            this.button1.Text = "Menüye Yeni Bir Ürün Eklemek İçin Tıklayın";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label3.Location = new System.Drawing.Point(303, 129);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(246, 25);
+            this.label3.TabIndex = 24;
+            this.label3.Text = "Depodaki Malzemeler:";
+            // 
+            // depotxtbox
+            // 
+            this.depotxtbox.Location = new System.Drawing.Point(308, 157);
+            this.depotxtbox.Multiline = true;
+            this.depotxtbox.Name = "depotxtbox";
+            this.depotxtbox.ReadOnly = true;
+            this.depotxtbox.Size = new System.Drawing.Size(285, 142);
+            this.depotxtbox.TabIndex = 25;
+            // 
+            // depoeklebtn
+            // 
+            this.depoeklebtn.Location = new System.Drawing.Point(492, 80);
+            this.depoeklebtn.Name = "depoeklebtn";
+            this.depoeklebtn.Size = new System.Drawing.Size(267, 33);
+            this.depoeklebtn.TabIndex = 26;
+            this.depoeklebtn.Text = "Depoya ürün eklemek için tıklayın";
+            this.depoeklebtn.UseVisualStyleBackColor = true;
+            this.depoeklebtn.Click += new System.EventHandler(this.depoeklebtn_Click);
+            // 
+            // depogorbtn
+            // 
+            this.depogorbtn.Location = new System.Drawing.Point(308, 305);
+            this.depogorbtn.Name = "depogorbtn";
+            this.depogorbtn.Size = new System.Drawing.Size(285, 33);
+            this.depogorbtn.TabIndex = 27;
+            this.depogorbtn.Text = "Depoyu Görüntülemek İçin Tıklayın";
+            this.depogorbtn.UseVisualStyleBackColor = true;
+            this.depogorbtn.Click += new System.EventHandler(this.depogorbtn_Click);
             // 
             // yetkiliekrani
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.depogorbtn);
+            this.Controls.Add(this.depoeklebtn);
+            this.Controls.Add(this.depotxtbox);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.stokgorbtn);
             this.Controls.Add(this.stoktxtbox);
@@ -166,7 +206,6 @@
             this.Name = "yetkiliekrani";
             this.Text = "yetkiliekrani";
             this.Load += new System.EventHandler(this.yetkiliekrani_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.anaYemekBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -175,7 +214,6 @@
         #endregion
 
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.BindingSource anaYemekBindingSource;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button stokeklebtn;
         private System.Windows.Forms.Button stoksilbtn;
@@ -183,5 +221,9 @@
         internal System.Windows.Forms.TextBox stoktxtbox;
         private System.Windows.Forms.Button stokgorbtn;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label3;
+        internal System.Windows.Forms.TextBox depotxtbox;
+        private System.Windows.Forms.Button depoeklebtn;
+        private System.Windows.Forms.Button depogorbtn;
     }
 }

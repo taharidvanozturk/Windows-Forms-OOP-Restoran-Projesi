@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -41,6 +42,28 @@ namespace ndp_proje_2023
         {
             var yeniurunformu = new yeniurunformu();
             yeniurunformu.Show();
+        }
+
+        private void depoeklebtn_Click(object sender, EventArgs e)
+        {
+            var depoekleme = new depoekleme();
+            depoekleme.Show();
+        }
+
+        private void depogorbtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Dosya okuma ve içeriği depoTextBox'a yazma işlemi
+                using (StreamReader reader = new StreamReader("depo.txt"))
+                {
+                    depotxtbox.Text = reader.ReadToEnd();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Dosya okuma hatası: " + ex.Message);
+            }
         }
     }
 }

@@ -1,28 +1,66 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.Json;
+
+
 
 
 namespace ndp_proje_2023
 {
     public partial class siparisekrani : Form
     {
+        
+
+        private Depo depo;
+        private List<yiyecek> yemekler;
+
         public siparisekrani()
         {
             InitializeComponent();
+            depo = new Depo();
+            DepoVerileriniDoldur();
+            yemekler = new List<yiyecek>();
+            YemekleriYukle();
         }
+
 
         private siparis siparisInstance = new siparis();
         private List<string> siparisListesi = new List<string>();
         private List<CheckBox> checkBoxes = new List<CheckBox>();
+        private void DepoVerileriniDoldur()
+        {
+            // depo.txt dosyasındaki malzeme verilerini depo nesnesine ekle
+            // Dosya formatı: malzeme --- adet
+            string[] depoVerileri = System.IO.File.ReadAllLines("depo.txt");
+            foreach (string depoVeri in depoVerileri)
+            {
+                string[] veriParcalari = depoVeri.Split(new string[] { " --- " }, StringSplitOptions.None);
+                if (veriParcalari.Length == 2 && int.TryParse(veriParcalari[1], out int adet))
+                {
+                    depo.MalzemeEkle(veriParcalari[0], adet);
+                }
+            }
 
-        
+        }
+
+        private void YemekleriYukle()
+        {
+            try
+            {
+                string json = File.ReadAllText("yemekler.json");
+                yemekler = JsonSerializer.Deserialize<List<yiyecek>>(json);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Yemekler yüklenirken bir hata oluştu: " + ex.Message);
+            }
+        }
+
 
 
         private void yesilsalatabtn_Click(object sender, EventArgs e)
@@ -259,7 +297,8 @@ namespace ndp_proje_2023
 
         private void siparisonaybtn_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(string.Join(Environment.NewLine,"Siparişiniz:")+"\r\n"+string.Join(Environment.NewLine, siparisListesi));
+            MessageBox.Show(string.Join(Environment.NewLine, "Siparişiniz:") + "\r\n" + string.Join(Environment.NewLine, siparisListesi));
+            
         }
     }
 }
