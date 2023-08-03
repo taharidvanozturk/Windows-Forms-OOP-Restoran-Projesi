@@ -432,11 +432,11 @@
             this.siparisonaybtn.UseVisualStyleBackColor = false;
             this.siparisonaybtn.Click += new System.EventHandler(this.siparisonaybtn_Click);
             // 
-            // Form1
+            // siparisekrani
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1449, 564);
+            this.ClientSize = new System.Drawing.Size(1059, 431);
             this.Controls.Add(this.siparisonaybtn);
             this.Controls.Add(this.silButton);
             this.Controls.Add(this.groupBox5);
@@ -446,7 +446,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.siparistxtbox);
             this.Controls.Add(this.groupBox2);
-            this.Name = "Form1";
+            this.Name = "siparisekrani";
             this.Text = "Sipariş Oluşturma Ekranı";
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);

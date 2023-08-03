@@ -1,4 +1,3 @@
-## sdf ##
 ## Yeşil Salata ##
 ## Çoban Salata ##
 ## Sezar Salata ##
@@ -24,3 +23,6 @@
 ## Tavuklu Pilav ##
 ## Etli Makarna ##
 ## Tavuk Göğsü ##
+## Beyran ##
+
+## Çiğ Köfte ##

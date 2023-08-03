@@ -8,18 +8,17 @@ using System.Windows.Forms;
 
 namespace ndp_proje_2023
 {
-    internal class siparis:yiyecek
+    internal class siparis
     {
-
         public void yemekEkle(List<string> siparisListesi, List<string> secilenler)
         {
             foreach (var secilen in secilenler)
             {
                 siparisListesi.Add(secilen);
-
             }
             SiparisleriYazdir(siparisListesi);
         }
+
         public void yemekSil(List<string> siparisListesi, List<string> secilenler)
         {
             foreach (var secilen in secilenler)
@@ -30,7 +29,7 @@ namespace ndp_proje_2023
 
         public void SiparisleriYazdir(List<string> siparisListesi)
         {
-            siparisekrani form1 = (siparisekrani)Application.OpenForms["Form1"];
+            siparisekrani form1 = (siparisekrani)Application.OpenForms["siparisekrani"];
             form1.siparistxtbox.Text = string.Join(Environment.NewLine, siparisListesi);
         }
     }

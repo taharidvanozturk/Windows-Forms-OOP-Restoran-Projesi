@@ -1,4 +1,3 @@
-sdf
 Roka
 Marul
 Salatalık
@@ -49,11 +48,9 @@ Ejder Meyves
 Kemal Paşa
 Şerbet
 Kaymak
-
 Bisküvi
 Krema
 Çilek
-
 Tel Kadayıf
 Sadeyağ
 İnce Çekilmiş Antep Fıstığı
@@ -81,8 +78,14 @@ Eti (dana, tavuk, vb.)
 Makarna
 Domates sosu
 Baharatlar
-
-
 Süt 
 Nişasta
 Şeker
+Et
+Salça
+Baharat
+Bulgur
+Bulgur
+Su
+Salça
+Baharat

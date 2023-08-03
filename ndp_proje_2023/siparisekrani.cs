@@ -7,24 +7,18 @@ using System.Linq;
 using System.Windows.Forms;
 using System.Text.Json;
 
-
-
-
 namespace ndp_proje_2023
 {
     public partial class siparisekrani : Form
     {
-        
 
-        private Depo depo;
-        private List<yiyecek> yemekler;
 
+        public Depo depo;
         public siparisekrani()
         {
             InitializeComponent();
             depo = new Depo();
             DepoVerileriniDoldur();
-            yemekler = new List<yiyecek>();
             YemekleriYukle();
         }
 
@@ -48,18 +42,39 @@ namespace ndp_proje_2023
 
         }
 
+
+
+        private List<yiyecek> yemekler; // Change the type to List<yiyecek>
+
         private void YemekleriYukle()
         {
             try
             {
                 string json = File.ReadAllText("yemekler.json");
-                yemekler = JsonSerializer.Deserialize<List<yiyecek>>(json);
+                List<yiyecek> yemekList = JsonSerializer.Deserialize<List<yiyecek>>(json);
+
+                List<yiyecek> yemekAdList = new List<yiyecek>(); // Change the type to List<yiyecek>
+                Random random = new Random();
+
+                foreach (var yemek in yemekList)
+                {
+                    string yemekAd = yemek.Ad;
+                    if (yemekAdList.Any(y => y.Ad == yemekAd)) // Check if the yemekAd already exists in the list
+                    {
+                        yemekAd += " --- " + random.Next(1000, 10000); // Add random quantity
+                    }
+                    yemek.Ad = yemekAd; // Update the Ad property of the yiyecek object
+                    yemekAdList.Add(yemek);
+                }
+
+                yemekler = yemekAdList;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Yemekler yüklenirken bir hata oluştu: " + ex.Message);
             }
         }
+
 
 
 
