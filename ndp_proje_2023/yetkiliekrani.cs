@@ -38,7 +38,7 @@ namespace ndp_proje_2023
 
         private void stokeklebtn_Click(object sender, EventArgs e)
         {
-              if (comboBox1.SelectedIndex == -1)
+            if (comboBox1.SelectedIndex == -1)
             {
                 MessageBox.Show("Lütfen bir yemek seçin.");
                 return;

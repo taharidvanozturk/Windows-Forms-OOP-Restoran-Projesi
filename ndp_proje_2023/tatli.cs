@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ndp_proje_2023
 {
-    internal class tatli:yiyecek
+    internal class tatli : yiyecek
     {
         public string UrunAdi { get; set; }
         public DateTime UretimTarihi { get; set; }
