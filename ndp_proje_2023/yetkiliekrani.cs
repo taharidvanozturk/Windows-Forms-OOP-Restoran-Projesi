@@ -1,12 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ndp_proje_2023
@@ -14,18 +9,25 @@ namespace ndp_proje_2023
     public partial class yetkiliekrani : Form
     {
         private List<string> siparisListesi;
+        private List<yiyecek> yemekler;
+        private Depo depo; // Add this field
+        public Dictionary<string, int> Malzemeler { get; set; }
 
 
         public yetkiliekrani()
         {
             InitializeComponent();
-
         }
-        public yetkiliekrani(List<string> siparisListesi) : this()
+
+        // Modify the constructor to accept siparisListesi, yemekler, and depo
+        public yetkiliekrani(List<string> siparisListesi, List<yiyecek> yemekler, Depo depo) : this()
         {
             this.siparisListesi = siparisListesi;
+            this.yemekler = yemekler;
+            this.depo = depo; // Initialize the depo field
             SiparisleriGoster();
         }
+
 
         private void SiparisleriGoster()
         {
@@ -44,33 +46,16 @@ namespace ndp_proje_2023
                 return;
             }
 
-            string selectedYemek = comboBox1.SelectedItem.ToString();
-            yiyecek yemek = yemekler.FirstOrDefault(y => y.Ad == selectedYemek);
-
-            if (yemek != null)
+            if (!int.TryParse(textBoxMiktar.Text, out int miktar) || miktar <= 0)
             {
-                // Update the stock quantity
-                yemek.yiyececekStok += miktar;
-
-                // Update the ingredient quantities used in the selected food item
-                foreach (var ingredient in yemek.Malzemeler)
-                {
-                    if (depo.Malzemeler.ContainsKey(ingredient.Key))
-                    {
-                        depo.Malzemeler[ingredient.Key] -= ingredient.Value * miktar;
-                    }
-                }
-
-                // Save the updated stock and ingredient information
-                SaveDepoToFile();
-
-                // Update the display
-                SiparisleriGoster();
-                depoeklemeForm.UpdateDepoTextBox();
-                MessageBox.Show($"{selectedYemek} başarıyla {miktar} adet eklendi.");
+                MessageBox.Show("Geçerli bir miktar girin.");
+                return;
             }
 
+            string selectedYemek = comboBox1.SelectedItem.ToString();
+
         }
+
 
         private void stoksilbtn_Click(object sender, EventArgs e)
         {

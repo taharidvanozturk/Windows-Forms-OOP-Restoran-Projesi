@@ -4,8 +4,8 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Windows.Forms;
 using System.Text.Json;
+using System.Windows.Forms;
 
 namespace ndp_proje_2023
 {
@@ -372,7 +372,7 @@ namespace ndp_proje_2023
             string totalPriceText = totalPrice.ToString("F2");
             UpdateFiyatLabel(totalPriceText);
 
-            yetkiliekrani yetkiliekraniForm = new yetkiliekrani(siparisListesi);
+            yetkiliekrani yetkiliekraniForm = new yetkiliekrani();
             yetkiliekraniForm.Show();
         }
 

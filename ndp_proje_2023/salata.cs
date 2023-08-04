@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ndp_proje_2023
 {
-    internal class Salata:yiyecek
+    internal class Salata : yiyecek
     {
         public string UrunAdi { get; set; }
         public DateTime UretimTarihi { get; set; }
@@ -16,5 +12,5 @@ namespace ndp_proje_2023
         public decimal Fiyat { get; set; }
     }
 
-    
+
 }

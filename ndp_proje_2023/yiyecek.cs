@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace ndp_proje_2023
 {
     public class yiyecek
     {
+        internal int yiyecekStok;
+
         public string Ad { get; set; }
         public string yiyecekTuru { get; set; }
         public decimal yiyececekFiyat { get; set; }

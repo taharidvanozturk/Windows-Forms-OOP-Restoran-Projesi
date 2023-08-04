@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace ndp_proje_2023
 {
     public class Depo
     {
         private Dictionary<string, int> malzemeler;
+
+        public object Malzemeler { get; internal set; }
 
         public Depo()
         {

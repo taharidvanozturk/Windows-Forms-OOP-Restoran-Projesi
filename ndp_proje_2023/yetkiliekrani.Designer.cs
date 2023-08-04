@@ -42,6 +42,7 @@
             this.depogorbtn = new System.Windows.Forms.Button();
             this.guncelsiparislertxtbox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.textBoxMiktar = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // comboBox1
@@ -211,11 +212,20 @@
             this.label4.TabIndex = 28;
             this.label4.Text = "Güncel Siparişler:";
             // 
+            // textBoxMiktar
+            // 
+            this.textBoxMiktar.Location = new System.Drawing.Point(12, 68);
+            this.textBoxMiktar.Name = "textBoxMiktar";
+            this.textBoxMiktar.Size = new System.Drawing.Size(285, 20);
+            this.textBoxMiktar.TabIndex = 30;
+            this.textBoxMiktar.Text = "Miktar Giriniz";
+            // 
             // yetkiliekrani
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1092, 450);
+            this.Controls.Add(this.textBoxMiktar);
             this.Controls.Add(this.guncelsiparislertxtbox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.depogorbtn);
@@ -254,5 +264,6 @@
         private System.Windows.Forms.Button depogorbtn;
         internal System.Windows.Forms.TextBox guncelsiparislertxtbox;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBoxMiktar;
     }
 }
