@@ -91,6 +91,7 @@
             this.Controls.Add(this.textBox1);
             this.Name = "depoekleme";
             this.Text = "depoekleme";
+            this.Load += new System.EventHandler(this.depoekleme_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

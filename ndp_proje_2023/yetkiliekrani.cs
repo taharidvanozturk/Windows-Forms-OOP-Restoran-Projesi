@@ -13,10 +13,23 @@ namespace ndp_proje_2023
 {
     public partial class yetkiliekrani : Form
     {
-       
+        private List<string> siparisListesi;
+
+
         public yetkiliekrani()
         {
             InitializeComponent();
+            
+        }
+        public yetkiliekrani(List<string> siparisListesi) : this()
+        {
+            this.siparisListesi = siparisListesi;
+            SiparisleriGoster();
+        }
+
+        private void SiparisleriGoster()
+        {
+            guncelsiparislertxtbox.Text = string.Join(Environment.NewLine, siparisListesi);
         }
         private void yetkiliekrani_Load(object sender, EventArgs e)
         {
@@ -64,6 +77,11 @@ namespace ndp_proje_2023
             {
                 MessageBox.Show("Dosya okuma hatası: " + ex.Message);
             }
+        }
+
+        private void guncelsiparislertxtbox_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

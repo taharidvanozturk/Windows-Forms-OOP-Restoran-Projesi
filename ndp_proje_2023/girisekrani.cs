@@ -19,15 +19,16 @@ namespace ndp_proje_2023
 
         private void resyetgirbtn_Click(object sender, EventArgs e)
         {
+         
             var yetkiliekrani = new yetkiliekrani();
             yetkiliekrani.Show();
+            
         }
 
         private void siparisverbtn_Click(object sender, EventArgs e)
         {
             var siparisekrani = new siparisekrani();
             siparisekrani.Show();
-
         }
     }
 }

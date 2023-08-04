@@ -46,6 +46,10 @@ namespace ndp_proje_2023
             }
         }
 
+        private void depoekleme_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

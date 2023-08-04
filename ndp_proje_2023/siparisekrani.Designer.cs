@@ -62,6 +62,8 @@
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.silButton = new System.Windows.Forms.Button();
             this.siparisonaybtn = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblFiyat = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -271,7 +273,7 @@
             // 
             // siparistxtbox
             // 
-            this.siparistxtbox.Location = new System.Drawing.Point(703, 23);
+            this.siparistxtbox.Location = new System.Drawing.Point(617, 23);
             this.siparistxtbox.Multiline = true;
             this.siparistxtbox.Name = "siparistxtbox";
             this.siparistxtbox.ReadOnly = true;
@@ -282,7 +284,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(605, 23);
+            this.label1.Location = new System.Drawing.Point(519, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(92, 25);
             this.label1.TabIndex = 21;
@@ -412,7 +414,7 @@
             // 
             // silButton
             // 
-            this.silButton.Location = new System.Drawing.Point(706, 310);
+            this.silButton.Location = new System.Drawing.Point(620, 310);
             this.silButton.Name = "silButton";
             this.silButton.Size = new System.Drawing.Size(225, 30);
             this.silButton.TabIndex = 32;
@@ -423,7 +425,7 @@
             // siparisonaybtn
             // 
             this.siparisonaybtn.BackColor = System.Drawing.Color.LawnGreen;
-            this.siparisonaybtn.Location = new System.Drawing.Point(706, 344);
+            this.siparisonaybtn.Location = new System.Drawing.Point(620, 344);
             this.siparisonaybtn.Name = "siparisonaybtn";
             this.siparisonaybtn.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.siparisonaybtn.Size = new System.Drawing.Size(225, 30);
@@ -432,11 +434,32 @@
             this.siparisonaybtn.UseVisualStyleBackColor = false;
             this.siparisonaybtn.Click += new System.EventHandler(this.siparisonaybtn_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label2.Location = new System.Drawing.Point(903, 231);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(74, 25);
+            this.label2.TabIndex = 34;
+            this.label2.Text = "Tutar:";
+            // 
+            // lblFiyat
+            // 
+            this.lblFiyat.AutoSize = true;
+            this.lblFiyat.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblFiyat.Location = new System.Drawing.Point(903, 310);
+            this.lblFiyat.Name = "lblFiyat";
+            this.lblFiyat.Size = new System.Drawing.Size(0, 25);
+            this.lblFiyat.TabIndex = 35;
+            // 
             // siparisekrani
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1059, 431);
+            this.Controls.Add(this.lblFiyat);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.siparisonaybtn);
             this.Controls.Add(this.silButton);
             this.Controls.Add(this.groupBox5);
@@ -448,6 +471,7 @@
             this.Controls.Add(this.groupBox2);
             this.Name = "siparisekrani";
             this.Text = "Sipariş Oluşturma Ekranı";
+            this.Load += new System.EventHandler(this.siparisekrani_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
@@ -494,6 +518,8 @@
         private System.Windows.Forms.Button silButton;
         private System.Windows.Forms.Button siparisonaybtn;
         internal System.Windows.Forms.TextBox siparistxtbox;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblFiyat;
     }
 }
 

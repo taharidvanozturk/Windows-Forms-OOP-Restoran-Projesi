@@ -40,6 +40,8 @@
             this.depotxtbox = new System.Windows.Forms.TextBox();
             this.depoeklebtn = new System.Windows.Forms.Button();
             this.depogorbtn = new System.Windows.Forms.Button();
+            this.guncelsiparislertxtbox = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // comboBox1
@@ -124,6 +126,7 @@
             this.stoktxtbox.Multiline = true;
             this.stoktxtbox.Name = "stoktxtbox";
             this.stoktxtbox.ReadOnly = true;
+            this.stoktxtbox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.stoktxtbox.Size = new System.Drawing.Size(285, 142);
             this.stoktxtbox.TabIndex = 21;
             // 
@@ -163,6 +166,7 @@
             this.depotxtbox.Multiline = true;
             this.depotxtbox.Name = "depotxtbox";
             this.depotxtbox.ReadOnly = true;
+            this.depotxtbox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.depotxtbox.Size = new System.Drawing.Size(285, 142);
             this.depotxtbox.TabIndex = 25;
             // 
@@ -186,11 +190,34 @@
             this.depogorbtn.UseVisualStyleBackColor = true;
             this.depogorbtn.Click += new System.EventHandler(this.depogorbtn_Click);
             // 
+            // guncelsiparislertxtbox
+            // 
+            this.guncelsiparislertxtbox.Location = new System.Drawing.Point(608, 157);
+            this.guncelsiparislertxtbox.Multiline = true;
+            this.guncelsiparislertxtbox.Name = "guncelsiparislertxtbox";
+            this.guncelsiparislertxtbox.ReadOnly = true;
+            this.guncelsiparislertxtbox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.guncelsiparislertxtbox.Size = new System.Drawing.Size(285, 142);
+            this.guncelsiparislertxtbox.TabIndex = 29;
+            this.guncelsiparislertxtbox.TextChanged += new System.EventHandler(this.guncelsiparislertxtbox_TextChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label4.Location = new System.Drawing.Point(603, 129);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(200, 25);
+            this.label4.TabIndex = 28;
+            this.label4.Text = "Güncel Siparişler:";
+            // 
             // yetkiliekrani
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1092, 450);
+            this.Controls.Add(this.guncelsiparislertxtbox);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.depogorbtn);
             this.Controls.Add(this.depoeklebtn);
             this.Controls.Add(this.depotxtbox);
@@ -225,5 +252,7 @@
         internal System.Windows.Forms.TextBox depotxtbox;
         private System.Windows.Forms.Button depoeklebtn;
         private System.Windows.Forms.Button depogorbtn;
+        internal System.Windows.Forms.TextBox guncelsiparislertxtbox;
+        private System.Windows.Forms.Label label4;
     }
 }

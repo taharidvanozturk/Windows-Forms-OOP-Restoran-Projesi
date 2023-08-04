@@ -20,6 +20,8 @@ public class Urun
 
     public string UrunAdi { get { return urunAdi; } }
 
+    public object UretimTarihi { get; internal set; }
+
     private void RandomizeValues()
     {
         Random random = new Random();
@@ -32,7 +34,6 @@ public class Urun
 
         stokAdet = random.Next(1001);
 
-        // Random fiyat between 1 and 100
         fiyat = (float)random.NextDouble() * 100;
     }
 
@@ -46,7 +47,6 @@ public class Urun
 
     // Methods for Kayıt ekleme, kayıt silme, kayıt güncelleme, rapor alma can be added here.
 
-    // Method to read product names from "malzemeler.txt"
     public static List<Urun> ReadUrunlerFromMalzemelerFile(string filePath)
     {
         List<Urun> urunler = new List<Urun>();
