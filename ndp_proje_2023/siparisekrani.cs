@@ -25,12 +25,79 @@ namespace ndp_proje_2023
 
         private List<yiyecek> yemekler;
 
+        public class FoodPriceCalculator
+        {
+            private Dictionary<string, decimal> ingredientPrices;
+            private List<yiyecek> yemekler;
+
+
+            public FoodPriceCalculator(Dictionary<string, decimal> ingredientPrices, List<yiyecek> yemekler)
+            {
+                this.ingredientPrices = ingredientPrices;
+                this.yemekler = yemekler;
+
+            }
+
+            public decimal CalculateSellingPrice(yiyecek foodItem)
+            {
+                decimal totalPrice = 0;
+
+                foreach (var ingredient in foodItem.Malzemeler)
+                {
+                    if (ingredientPrices.TryGetValue(ingredient.Key, out decimal price))
+                    {
+                        totalPrice += price * ingredient.Value;
+                    }
+                    else
+                    {
+                        throw new InvalidOperationException($"Ingredient price not found for: {ingredient.Key}");
+                    }
+                }
+
+                // Assuming KDV is a percentage (e.g., 8%)
+                decimal kdvRate = Convert.ToDecimal(foodItem.yiyecekKDVOrani);
+                decimal sellingPrice = totalPrice * (1 + kdvRate / 100);
+
+                return sellingPrice;
+            }
+
+            public decimal CalculateSellingPrice(List<string> siparisListesi)
+            {
+                decimal totalPrice = 0;
+
+                foreach (var siparis in siparisListesi)
+                {
+                    yiyecek yemek = yemekler.FirstOrDefault(y => y.Ad == siparis);
+                    if (yemek != null)
+                    {
+                        totalPrice += CalculateSellingPrice(yemek);
+                    }
+                }
+
+                return totalPrice;
+            }
+        }
+
+        private Dictionary<string, decimal> ingredientPrices = new Dictionary<string, decimal>();
+
         private void YemekleriYukle()
         {
             try
             {
                 string json = File.ReadAllText("yemekler.json");
                 List<yiyecek> yemekList = JsonSerializer.Deserialize<List<yiyecek>>(json);
+
+                // Populate the ingredientPrices dictionary with ingredient names and their prices
+                foreach (var yemek in yemekList)
+                {
+                    foreach (var ingredient in yemek.Malzemeler)
+                    {
+                        if (!ingredientPrices.ContainsKey(ingredient.Key))
+                        {
+                            ingredientPrices.Add(ingredient.Key, ingredient.Value);
+                        }
+                    }
+                }
 
                 List<yiyecek> yemekAdList = new List<yiyecek>();
                 Random random = new Random();
@@ -67,168 +134,168 @@ namespace ndp_proje_2023
 
         private void cobansalatabtn_Click(object sender, EventArgs e)
         {
-            string siparis = cobansalatabtn.Text;  
+            string siparis = cobansalatabtn.Text;
 
             siparisInstance.yemekEkle(siparisListesi, new List<string> { siparis });
         }
 
         private void sezarsalatabtn_Click(object sender, EventArgs e)
         {
-            string siparis = sezarsalatabtn.Text;  
+            string siparis = sezarsalatabtn.Text;
 
             siparisInstance.yemekEkle(siparisListesi, new List<string> { siparis });
         }
 
         private void istsalbtn_Click(object sender, EventArgs e)
         {
-            string siparis = istsalbtn.Text;  
+            string siparis = istsalbtn.Text;
 
             siparisInstance.yemekEkle(siparisListesi, new List<string> { siparis });
         }
 
         private void vansalatabtn_Click(object sender, EventArgs e)
         {
-            string siparis = vansalatabtn.Text;  
+            string siparis = vansalatabtn.Text;
 
             siparisInstance.yemekEkle(siparisListesi, new List<string> { siparis });
         }
 
         private void etsotebtn_Click(object sender, EventArgs e)
         {
-            string siparis = etsotebtn.Text;  
+            string siparis = etsotebtn.Text;
 
             siparisInstance.yemekEkle(siparisListesi, new List<string> { siparis });
         }
 
         private void tantunibtn_Click(object sender, EventArgs e)
         {
-            string siparis = tantunibtn.Text;  
+            string siparis = tantunibtn.Text;
 
             siparisInstance.yemekEkle(siparisListesi, new List<string> { siparis });
         }
 
         private void mantibtn_Click(object sender, EventArgs e)
         {
-            string siparis = mantibtn.Text;  
+            string siparis = mantibtn.Text;
 
             siparisInstance.yemekEkle(siparisListesi, new List<string> { siparis });
         }
 
         private void tvkplvbtn_Click(object sender, EventArgs e)
         {
-            string siparis = tvkplvbtn.Text;  
+            string siparis = tvkplvbtn.Text;
 
             siparisInstance.yemekEkle(siparisListesi, new List<string> { siparis });
         }
 
         private void etmkrnbtn_Click(object sender, EventArgs e)
         {
-            string siparis = etmkrnbtn.Text;  
+            string siparis = etmkrnbtn.Text;
 
             siparisInstance.yemekEkle(siparisListesi, new List<string> { siparis });
         }
 
         private void colabtn_Click(object sender, EventArgs e)
         {
-            string siparis = colabtn.Text;  
+            string siparis = colabtn.Text;
 
             siparisInstance.yemekEkle(siparisListesi, new List<string> { siparis });
         }
 
         private void fantabtn_Click(object sender, EventArgs e)
         {
-            string siparis = fantabtn.Text;  
+            string siparis = fantabtn.Text;
 
             siparisInstance.yemekEkle(siparisListesi, new List<string> { siparis });
         }
 
         private void ayranbtn_Click(object sender, EventArgs e)
         {
-            string siparis = ayranbtn.Text;  
+            string siparis = ayranbtn.Text;
 
             siparisInstance.yemekEkle(siparisListesi, new List<string> { siparis });
         }
 
         private void subtn_Click(object sender, EventArgs e)
         {
-            string siparis = subtn.Text;  
+            string siparis = subtn.Text;
 
             siparisInstance.yemekEkle(siparisListesi, new List<string> { siparis });
         }
 
         private void caybtn_Click(object sender, EventArgs e)
         {
-            string siparis = caybtn.Text;  
+            string siparis = caybtn.Text;
 
             siparisInstance.yemekEkle(siparisListesi, new List<string> { siparis });
         }
 
         private void elmabtn_Click(object sender, EventArgs e)
         {
-            string siparis = elmabtn.Text;  
+            string siparis = elmabtn.Text;
 
             siparisInstance.yemekEkle(siparisListesi, new List<string> { siparis });
         }
 
         private void armutbtn_Click(object sender, EventArgs e)
         {
-            string siparis = armutbtn.Text;  
+            string siparis = armutbtn.Text;
 
             siparisInstance.yemekEkle(siparisListesi, new List<string> { siparis });
         }
 
         private void muzbtn_Click(object sender, EventArgs e)
         {
-            string siparis = muzbtn.Text;  
+            string siparis = muzbtn.Text;
 
             siparisInstance.yemekEkle(siparisListesi, new List<string> { siparis });
         }
 
         private void kivibtn_Click(object sender, EventArgs e)
         {
-            string siparis = kivibtn.Text;  
+            string siparis = kivibtn.Text;
 
             siparisInstance.yemekEkle(siparisListesi, new List<string> { siparis });
         }
 
         private void ejdermeybtn_Click(object sender, EventArgs e)
         {
-            string siparis = ejdermeybtn.Text;  
+            string siparis = ejdermeybtn.Text;
 
             siparisInstance.yemekEkle(siparisListesi, new List<string> { siparis });
         }
 
         private void KemalPasabtn_Click(object sender, EventArgs e)
         {
-            string siparis = KemalPasabtn.Text;  
+            string siparis = KemalPasabtn.Text;
 
             siparisInstance.yemekEkle(siparisListesi, new List<string> { siparis });
         }
 
         private void magnolyabtn_Click(object sender, EventArgs e)
         {
-            string siparis = magnolyabtn.Text;  
+            string siparis = magnolyabtn.Text;
 
             siparisInstance.yemekEkle(siparisListesi, new List<string> { siparis });
         }
 
         private void kunefebtn_Click(object sender, EventArgs e)
         {
-            string siparis = kunefebtn.Text;  
+            string siparis = kunefebtn.Text;
 
             siparisInstance.yemekEkle(siparisListesi, new List<string> { siparis });
         }
 
         private void wafflebtn_Click(object sender, EventArgs e)
         {
-            string siparis = wafflebtn.Text;  
+            string siparis = wafflebtn.Text;
 
             siparisInstance.yemekEkle(siparisListesi, new List<string> { siparis });
         }
 
         private void tvkgsbtn_Click(object sender, EventArgs e)
         {
-            string siparis = tvkgsbtn.Text;  
+            string siparis = tvkgsbtn.Text;
 
             siparisInstance.yemekEkle(siparisListesi, new List<string> { siparis });
         }
@@ -293,15 +360,20 @@ namespace ndp_proje_2023
         {
             MessageBox.Show("Siparişiniz:\r\n" + string.Join(Environment.NewLine, siparisListesi));
 
-            decimal totalPrice = CalculateTotalPrice(siparisListesi);
-            string totalPriceText = totalPrice.ToString("F2");
+            // Create an instance of FoodPriceCalculator and pass the ingredientPrices dictionary
+            FoodPriceCalculator priceCalculator = new FoodPriceCalculator(ingredientPrices, yemekler);
 
+            // Calculate the total price using the CalculateTotalPrice method
+            decimal totalPrice = CalculateTotalPrice(siparisListesi);
+
+            // Calculate the selling price of selectedFoodItem using the FoodPriceCalculator
+            decimal sellingPrice = priceCalculator.CalculateSellingPrice(siparisListesi);
+
+            string totalPriceText = totalPrice.ToString("F2");
             UpdateFiyatLabel(totalPriceText);
 
             yetkiliekrani yetkiliekraniForm = new yetkiliekrani(siparisListesi);
             yetkiliekraniForm.Show();
-
-            //this.Close();
         }
 
         private void siparisekrani_Load(object sender, EventArgs e)

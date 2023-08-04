@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ndp_proje_2023.anaYemek" Collapsed="true">
+    <Position X="3.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAQAAIAAABAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>anaYemek.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ndp_proje_2023.Depo">
+    <Position X="3.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAAAAAAAgAAAAAAQQAAAAAAAAA=</HashCode>
+      <FileName>depo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ndp_proje_2023.depoekleme">
+    <Position X="16" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAACAAABAAAACAAAACAAAIAAAAEAAAEAAAAEA=</HashCode>
+      <FileName>depoekleme.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ndp_proje_2023.girisekrani">
+    <Position X="14.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAQCAAAAAAAACgAAACAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>girisekrani.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ndp_proje_2023.icecek">
+    <Position X="12.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAQAAIAAABAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>icecek.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ndp_proje_2023.meyve">
+    <Position X="5.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAQAAIAAABAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>meyve.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ndp_proje_2023.Program" Collapsed="true">
+    <Position X="5.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ndp_proje_2023.Salata">
+    <Position X="10.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAQAAIAAABAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>salata.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ndp_proje_2023.siparis">
+    <Position X="10.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>siparis.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ndp_proje_2023.siparisekrani">
+    <Position X="4.5" Y="4.75" Width="4.75" />
+    <NestedTypes>
+      <Class Name="ndp_proje_2023.siparisekrani.FoodPriceCalculator" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>siparisekrani.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>EKAgQIICs6RUgRAEBEKBAFgCEQBGBBagEKJWARQAAhI=</HashCode>
+      <FileName>siparisekrani.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ndp_proje_2023.tatli">
+    <Position X="8" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAQAAIAAABAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>tatli.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ndp_proje_2023.yeniurunformu">
+    <Position X="12.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACQAACAEABAAAACAAAACAAAIAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>yeniurunformu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ndp_proje_2023.yetkiliekrani">
+    <Position X="17.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAACAAACAAEBAQAgCRAAACAAAIAAAgQMCgUAQAAUA=</HashCode>
+      <FileName>yetkiliekrani.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ndp_proje_2023.yiyecek" Collapsed="true">
+    <Position X="8" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAUAAAAAAAAAAAAAAAABAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>yiyecek.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ndp_proje_2023.FoodPriceCalculator">
+    <Position X="16" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAACAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAA=</HashCode>
+      <FileName>yiyecek.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ndp_proje_2023.Properties.Resources">
+    <Position X="17.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ndp_proje_2023.Properties.Settings">
+    <Position X="14.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Urun">
+    <Position X="1.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAgAAAAAAEAAEBAAAgAACAAAAAAAIAAAACAAAAAA=</HashCode>
+      <FileName>urun.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

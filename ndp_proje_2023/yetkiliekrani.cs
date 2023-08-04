@@ -19,7 +19,7 @@ namespace ndp_proje_2023
         public yetkiliekrani()
         {
             InitializeComponent();
-            
+
         }
         public yetkiliekrani(List<string> siparisListesi) : this()
         {
@@ -38,6 +38,37 @@ namespace ndp_proje_2023
 
         private void stokeklebtn_Click(object sender, EventArgs e)
         {
+              if (comboBox1.SelectedIndex == -1)
+            {
+                MessageBox.Show("Lütfen bir yemek seçin.");
+                return;
+            }
+
+            string selectedYemek = comboBox1.SelectedItem.ToString();
+            yiyecek yemek = yemekler.FirstOrDefault(y => y.Ad == selectedYemek);
+
+            if (yemek != null)
+            {
+                // Update the stock quantity
+                yemek.yiyececekStok += miktar;
+
+                // Update the ingredient quantities used in the selected food item
+                foreach (var ingredient in yemek.Malzemeler)
+                {
+                    if (depo.Malzemeler.ContainsKey(ingredient.Key))
+                    {
+                        depo.Malzemeler[ingredient.Key] -= ingredient.Value * miktar;
+                    }
+                }
+
+                // Save the updated stock and ingredient information
+                SaveDepoToFile();
+
+                // Update the display
+                SiparisleriGoster();
+                depoeklemeForm.UpdateDepoTextBox();
+                MessageBox.Show($"{selectedYemek} başarıyla {miktar} adet eklendi.");
+            }
 
         }
 
@@ -81,7 +112,7 @@ namespace ndp_proje_2023
 
         private void guncelsiparislertxtbox_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ndp_proje_2023
 {
@@ -21,7 +22,7 @@ namespace ndp_proje_2023
 
     public class FoodPriceCalculator
     {
-        private Dictionary<string, decimal> ingredientPrices = new Dictionary<string, decimal>();
+        private readonly Dictionary<string, decimal> ingredientPrices = new Dictionary<string, decimal>();
 
         public FoodPriceCalculator(Dictionary<string, decimal> ingredientPrices)
         {
@@ -50,8 +51,7 @@ namespace ndp_proje_2023
                 }
                 else
                 {
-                    // Handle the case when ingredient price is not found (optional)
-                    // You can set a default price or handle it based on your requirements.
+                    throw new InvalidOperationException($"Ingredient price not found for: {ingredient.Key}");
                 }
             }
 

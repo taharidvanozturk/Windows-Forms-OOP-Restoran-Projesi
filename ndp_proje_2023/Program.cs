@@ -242,7 +242,7 @@ namespace ndp_proje_2023
                 StokAdet = 12,
                 Fiyat = 18.5m
             };
-            meyve meyve1=new meyve
+            meyve meyve1 = new meyve
             {
                 UrunAdi = "Elma",
                 UretimTarihi = new DateTime(2023, 6, 12),
