@@ -11,24 +11,32 @@ namespace ndp_proje_2023
 {
     public partial class siparisekrani : Form
     {
-        public Depo depo;
+        private List<string> siparisListesi;
+        private List<yiyecek> yemekler;
+        private Depo depo;
+        private siparis siparisInstance = new siparis();
+        public List<CheckBox> checkBoxes = new List<CheckBox>();
+
         public siparisekrani()
         {
             InitializeComponent();
+            siparisListesi = new List<string>();
+            yemekler = new List<yiyecek>();
             depo = new Depo();
-            YemekleriYukle();
         }
 
-        private siparis siparisInstance = new siparis();
-        private List<string> siparisListesi = new List<string>();
-        private List<CheckBox> checkBoxes = new List<CheckBox>();
 
-        private List<yiyecek> yemekler;
+        public siparisekrani(List<string> siparisListesi, List<yiyecek> yemekler, Depo depo) : this()
+        {
+            this.siparisListesi = siparisListesi;
+            this.yemekler = yemekler;
+            this.depo = depo;
+        }
 
         public class FoodPriceCalculator
         {
-            private Dictionary<string, decimal> ingredientPrices;
-            private List<yiyecek> yemekler;
+            public Dictionary<string, decimal> ingredientPrices;
+            public List<yiyecek> yemekler;
 
 
             public FoodPriceCalculator(Dictionary<string, decimal> ingredientPrices, List<yiyecek> yemekler)
@@ -356,23 +364,22 @@ namespace ndp_proje_2023
             }
         }
 
-        private void siparisonaybtn_Click(object sender, EventArgs e)
+        public void siparisonaybtn_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Siparişiniz:\r\n" + string.Join(Environment.NewLine, siparisListesi));
-
-            // Create an instance of FoodPriceCalculator and pass the ingredientPrices dictionary
-            FoodPriceCalculator priceCalculator = new FoodPriceCalculator(ingredientPrices, yemekler);
 
             // Calculate the total price using the CalculateTotalPrice method
             decimal totalPrice = CalculateTotalPrice(siparisListesi);
 
             // Calculate the selling price of selectedFoodItem using the FoodPriceCalculator
+            FoodPriceCalculator priceCalculator = new FoodPriceCalculator(ingredientPrices, yemekler);
             decimal sellingPrice = priceCalculator.CalculateSellingPrice(siparisListesi);
 
             string totalPriceText = totalPrice.ToString("F2");
             UpdateFiyatLabel(totalPriceText);
 
-            yetkiliekrani yetkiliekraniForm = new yetkiliekrani();
+            // Pass the necessary parameters to yetkiliekrani constructor
+            yetkiliekrani yetkiliekraniForm = new yetkiliekrani(siparisListesi, yemekler, depo);
             yetkiliekraniForm.Show();
         }
 

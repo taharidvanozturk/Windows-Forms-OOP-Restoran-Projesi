@@ -43,6 +43,7 @@
             this.guncelsiparislertxtbox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.textBoxMiktar = new System.Windows.Forms.TextBox();
+            this.gerigitbtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // comboBox1
@@ -214,17 +215,32 @@
             // 
             // textBoxMiktar
             // 
-            this.textBoxMiktar.Location = new System.Drawing.Point(12, 68);
+            this.textBoxMiktar.Location = new System.Drawing.Point(12, 73);
             this.textBoxMiktar.Name = "textBoxMiktar";
             this.textBoxMiktar.Size = new System.Drawing.Size(285, 20);
             this.textBoxMiktar.TabIndex = 30;
             this.textBoxMiktar.Text = "Miktar Giriniz";
             // 
+            // gerigitbtn
+            // 
+            this.gerigitbtn.BackColor = System.Drawing.Color.Red;
+            this.gerigitbtn.Cursor = System.Windows.Forms.Cursors.Default;
+            this.gerigitbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.gerigitbtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.gerigitbtn.Location = new System.Drawing.Point(777, 29);
+            this.gerigitbtn.Name = "gerigitbtn";
+            this.gerigitbtn.Size = new System.Drawing.Size(136, 84);
+            this.gerigitbtn.TabIndex = 31;
+            this.gerigitbtn.Text = "Geri Dönmek İçin Tıklayın";
+            this.gerigitbtn.UseVisualStyleBackColor = false;
+            this.gerigitbtn.Click += new System.EventHandler(this.gerigitbtn_Click);
+            // 
             // yetkiliekrani
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1092, 450);
+            this.ClientSize = new System.Drawing.Size(945, 390);
+            this.Controls.Add(this.gerigitbtn);
             this.Controls.Add(this.textBoxMiktar);
             this.Controls.Add(this.guncelsiparislertxtbox);
             this.Controls.Add(this.label4);
@@ -265,5 +281,6 @@
         internal System.Windows.Forms.TextBox guncelsiparislertxtbox;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBoxMiktar;
+        private System.Windows.Forms.Button gerigitbtn;
     }
 }

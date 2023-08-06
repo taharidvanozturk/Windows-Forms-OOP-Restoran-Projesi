@@ -91,3 +91,5 @@ Salça
 Baharat
 sucuk
 Yumurta
+Hamur
+Peynir

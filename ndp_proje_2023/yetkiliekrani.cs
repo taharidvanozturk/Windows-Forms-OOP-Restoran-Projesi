@@ -7,37 +7,31 @@ namespace ndp_proje_2023
 {
     public partial class yetkiliekrani : Form
     {
-        private List<string> siparisListesi;
-        private List<yiyecek> yemekler;
-        private Depo depo; // Add this field
+        public readonly List<string> siparisListesi;
+        public readonly List<yiyecek> yemekler;
+        public Depo depo; 
         public Dictionary<string, int> Malzemeler { get; set; }
 
 
-        public yetkiliekrani()
-        {
-            InitializeComponent();
-        }
 
-        // Modify the constructor to accept siparisListesi, yemekler, and depo
-        public yetkiliekrani(List<string> siparisListesi, List<yiyecek> yemekler, Depo depo) : this()
+        public yetkiliekrani(List<string> siparisListesi, List<yiyecek> yemekler, Depo depo)
         {
+            InitializeComponent(); // Initialize the components first
             this.siparisListesi = siparisListesi;
             this.yemekler = yemekler;
             this.depo = depo; // Initialize the depo field
+        }
+        public void yetkiliekrani_Load(object sender, EventArgs e)
+        {
             SiparisleriGoster();
         }
 
-
-        private void SiparisleriGoster()
+        public void SiparisleriGoster()
         {
             guncelsiparislertxtbox.Text = string.Join(Environment.NewLine, siparisListesi);
         }
-        private void yetkiliekrani_Load(object sender, EventArgs e)
-        {
 
-        }
-
-        private void stokeklebtn_Click(object sender, EventArgs e)
+        public void stokeklebtn_Click(object sender, EventArgs e)
         {
             if (comboBox1.SelectedIndex == -1)
             {
@@ -56,29 +50,29 @@ namespace ndp_proje_2023
         }
 
 
-        private void stoksilbtn_Click(object sender, EventArgs e)
+        public void stoksilbtn_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void stokgorbtn_Click(object sender, EventArgs e)
+        public void stokgorbtn_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        public void button1_Click(object sender, EventArgs e)
         {
             var yeniurunformu = new yeniurunformu();
             yeniurunformu.Show();
         }
 
-        private void depoeklebtn_Click(object sender, EventArgs e)
+        public void depoeklebtn_Click(object sender, EventArgs e)
         {
             var depoekleme = new depoekleme();
             depoekleme.Show();
         }
 
-        private void depogorbtn_Click(object sender, EventArgs e)
+        public void depogorbtn_Click(object sender, EventArgs e)
         {
             try
             {
@@ -94,9 +88,14 @@ namespace ndp_proje_2023
             }
         }
 
-        private void guncelsiparislertxtbox_TextChanged(object sender, EventArgs e)
+        public void guncelsiparislertxtbox_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void gerigitbtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
