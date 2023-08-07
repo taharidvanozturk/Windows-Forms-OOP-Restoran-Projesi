@@ -54,7 +54,7 @@ namespace ndp_proje_2023
                 {
                     if (ingredientPrices.TryGetValue(ingredient.Key, out decimal price))
                     {
-                        totalPrice += price * ingredient.Value;
+                        totalPrice += price * ingredient.Value / 1000;
                     }
                     else
                     {
@@ -147,7 +147,8 @@ namespace ndp_proje_2023
         {
             string siparis = yesilsalatabtn.Text;
 
-            siparisInstance.yemekEkle(siparisListesi, new List<string> { siparis }, this); 
+            siparisInstance.yemekEkle(siparisListesi, new List<string> { siparis }, this);
+            
             
         }
         private void cobansalatabtn_Click(object sender, EventArgs e)
@@ -318,7 +319,6 @@ namespace ndp_proje_2023
             siparisInstance.yemekEkle(siparisListesi, new List<string> { siparis }, this);
         }
 
-
         private void silButton_Click(object sender, EventArgs e)
         {
             if (siparisListesi.Count == 0)
@@ -374,25 +374,29 @@ namespace ndp_proje_2023
             }
         }
 
-        public void siparisonaybtn_Click(object sender, EventArgs e)
-        {
-            YemekleriYukle();
-            MessageBox.Show("Siparişiniz:\r\n" + string.Join(Environment.NewLine, siparisListesi));
+        private void siparisonaybtn_Click(object sender, EventArgs e)
+    {
+        YemekleriYukle();
+        MessageBox.Show("Siparişiniz:\r\n" + string.Join(Environment.NewLine, siparisListesi));
 
-            // Calculate the total price using the CalculateTotalPrice method
-            decimal totalPrice = CalculateTotalPrice();
+        // Calculate the total price using the CalculateTotalPrice method
+        decimal totalPrice = CalculateTotalPrice();
 
-            // Calculate the selling price of selectedFoodItem using the FoodPriceCalculator
-            FoodPriceCalculator priceCalculator = new FoodPriceCalculator(ingredientPrices, yemekler);
-            decimal sellingPrice = priceCalculator.CalculateSellingPrice(siparisListesi);
+        // Calculate the selling price of selectedFoodItem using the FoodPriceCalculator
+        FoodPriceCalculator priceCalculator = new FoodPriceCalculator(ingredientPrices, yemekler);
+        decimal sellingPrice = priceCalculator.CalculateSellingPrice(siparisListesi);
 
-            string totalPriceText = totalPrice.ToString("F2");
-            UpdateFiyatLabel(totalPriceText);
+        string totalPriceText = totalPrice.ToString("F2");
+        UpdateFiyatLabel(totalPriceText);
 
-            // Pass the necessary parameters to yetkiliekrani constructor
-            yetkiliekrani yetkiliekraniForm = new yetkiliekrani(siparisListesi, yemekler, depo);
-            yetkiliekraniForm.Show();
-        }
+        // Display the calculated selling price in the lblFiyat label
+        string sellingPriceText = sellingPrice.ToString("F2");
+        lblFiyat.Text = $"Toplam Fiyat: {totalPriceText} TL\nSatış Fiyatı: {sellingPriceText} TL";
+
+        // Pass the necessary parameters to yetkiliekrani constructor
+        yetkiliekrani yetkiliekraniForm = new yetkiliekrani(siparisListesi, yemekler, depo);
+        yetkiliekraniForm.Show();
+    }
 
         private void siparisekrani_Load(object sender, EventArgs e)
         {

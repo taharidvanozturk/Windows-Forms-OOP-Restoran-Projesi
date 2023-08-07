@@ -15,12 +15,12 @@ namespace ndp_proje_2023
 
     public class FoodPriceCalculator
     {
-        // Yemek malzeme fiyatlarını tutan bir sözlük (dictionary)
+        // Yemek malzeme fiyatlarını tutan bir sözlük (dictionary) oluşturuyorum
         private readonly Dictionary<string, decimal> ingredientPrices = new Dictionary<string, decimal>();
 
         public FoodPriceCalculator(Dictionary<string, decimal> ingredientPrices)
         {
-            // Yemek malzeme fiyatlarını ayarlamak için sözlüğü başlatıyoruz
+            // Yemek malzeme fiyatlarını ayarlamak için sözlüğü başlatıyorum
             this.ingredientPrices = ingredientPrices;
 
             _ = new Dictionary<string, decimal>()

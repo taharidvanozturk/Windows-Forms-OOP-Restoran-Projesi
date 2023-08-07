@@ -8,15 +8,15 @@ namespace ndp_proje_2023
     {
         public void yemekEkle(List<string> siparisListesi, List<string> yeniSiparisler, siparisekrani form)
         {
-            foreach (var yeniSiparis in yeniSiparisler)
+            foreach (string siparis in yeniSiparisler)
             {
-                if (!siparisListesi.Contains(yeniSiparis))
-                {
-                    siparisListesi.Add(yeniSiparis);
-                    form.siparistxtbox.Text = string.Join(Environment.NewLine, siparisListesi);
-                }
+                siparisListesi.Add(siparis);
             }
+
+            form.siparistxtbox.Text = string.Join(Environment.NewLine, siparisListesi);
         }
+
+
 
         public void yemekSil(List<string> siparisListesi, List<string> secilenler)
         {

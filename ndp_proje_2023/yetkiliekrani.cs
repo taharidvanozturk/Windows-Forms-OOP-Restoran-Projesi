@@ -7,6 +7,7 @@ namespace ndp_proje_2023
 {
     public partial class yetkiliekrani : Form
     {
+        // Sipariş listesi, yiyecekler ve depo bilgileri için alanlar
         public readonly List<string> siparisListesi;
         public readonly List<yiyecek> yemekler;
         public Depo depo; 
