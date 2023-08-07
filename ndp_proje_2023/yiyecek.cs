@@ -15,6 +15,10 @@ namespace ndp_proje_2023
 
     public class FoodPriceCalculator
     {
+        // Yemek fiyatlarını hesaplamak için kullanılan sınıf.
+        // İçerisinde yemek malzeme fiyatlarını tutan bir sözlük (dictionary) bulunur.
+        // Malzemelerin fiyatları kullanılarak yemeklerin satış fiyatı hesaplanır.
+
         // Yemek malzeme fiyatlarını tutan bir sözlük (dictionary) oluşturuyorum
         private readonly Dictionary<string, decimal> ingredientPrices = new Dictionary<string, decimal>();
 
@@ -23,69 +27,11 @@ namespace ndp_proje_2023
             // Yemek malzeme fiyatlarını ayarlamak için sözlüğü başlatıyorum
             this.ingredientPrices = ingredientPrices;
 
+            // Malzeme fiyatlarını sözlüğe ekliyorum
             _ = new Dictionary<string, decimal>()
             {
-              { "Roka", 7.03m },
-              { "Marul", 7.41m },
-              { "Salatalık", 4.64m },
-              { "Domates", 9.02m },
-              { "Biber", 2.63m },
-              { "Zeytinyağı", 5.29m },
-              { "Limon", 6.20m },
-              { "Tuz", 5.28m },
-              { "Yeşil biber", 7.67m },
-              { "Kuru soğan", 9.52m },
-              { "Karabiber", 2.78m },
-              { "Roma marul", 5.38m },
-              { "Tavuk göğsü", 9.91m },
-              { "Kruton", 4.16m },
-              { "Parmesan peyniri", 3.60m },
-              { "Sezar sosu", 5.88m },
-              { "Soğan", 7.93m },
-              { "Nar ekşisi", 1.77m },
-              { "Kabak", 7.53m },
-              { "Nane", 5.03m },
-              { "Tere", 9.03m },
-              { "Taze soğan", 2.50m },
-              { "Yoğurt", 6.53m },
-              { "Sarımsak", 9.44m },
-              { "Kola", 6.03m },
-              { "Fanta", 1.54m },
-              { "Su", 1.72m },
-              { "Çay", 1.51m },
-              { "Elma", 5.41m },
-              { "Armut", 2.91m },
-              { "Muz", 5.91m },
-              { "Kivi", 8.75m },
-              { "Ejder meyvesi", 4.90m },
-              { "Kemal Paşa", 1.07m },
-              { "Şerbet", 9.26m },
-              { "Kaymak", 2.94m },
-              { "Bisküvi", 2.23m },
-              { "Krema", 7.86m },
-              { "Çilek", 9.95m },
-              { "Tel kadayıf", 7.64m },
-              { "Sade yağ", 5.85m },
-              { "İnce çekilmiş antep fıstığı", 3.18m },
-              { "Waffle", 8.76m },
-              { "Meyveler", 9.03m },
-              { "Et (dana, tavuk, vb.)", 2.56m },
-              { "Sebzeler (soğan, biber, domates, vb.)", 9.63m },
-              { "Baharat", 1.02m },
-              { "Tavuk veya dana eti", 4.14m },
-              { "Sumak", 8.34m },
-              { "Lavaş ekmeği", 7.36m },
-              { "Kıyma", 1.14m },
-              { "Mantı hamuru", 6.09m },
-              { "Tavuk eti", 9.22m },
-              { "Pirinç", 1.89m },
-              { "Makarna", 5.58m },
-              { "Domates sosu", 1.13m },
-              { "Süt", 2.29m },
-              { "Nişasta", 2.41m },
-              { "Şeker", 8.72m }
+                // Malzeme adı ve fiyatı çiftleri
             };
-
         }
 
         public decimal CalculateSellingPrice(yiyecek foodItem)

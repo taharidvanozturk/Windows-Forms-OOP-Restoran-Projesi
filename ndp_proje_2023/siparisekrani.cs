@@ -11,13 +11,13 @@ namespace ndp_proje_2023
 {
     public partial class siparisekrani : Form
     {
-        private List<string> siparisListesi;
-        private List<yiyecek> yemekler;
-        private Depo depo;
-        private siparis siparisInstance = new siparis();
-        public List<CheckBox> checkBoxes = new List<CheckBox>();
+        private List<string> siparisListesi; // Sipariş listesini tutan liste
+        private List<yiyecek> yemekler; // Yiyeceklerin tutulduğu liste
+        private Depo depo; // Depo nesnesi
+        private siparis siparisInstance = new siparis(); // Siparis sınıfı örneği
+        public List<CheckBox> checkBoxes = new List<CheckBox>(); // CheckBox nesnesi
 
-        public siparisekrani()
+        public siparisekrani() 
         {
             InitializeComponent();
             siparisListesi = new List<string>();
@@ -25,7 +25,7 @@ namespace ndp_proje_2023
             depo = new Depo();
         }
 
-
+        // Sipariş listesi, yiyecek listesi ve depo nesnesini burada başlatın veya başka bir yerden yükleyin
         public siparisekrani(List<string> siparisListesi, List<yiyecek> yemekler, Depo depo) : this()
         {
             this.siparisListesi = siparisListesi;
@@ -35,8 +35,8 @@ namespace ndp_proje_2023
 
         public class FoodPriceCalculator
         {
-            public Dictionary<string, decimal> ingredientPrices;
-            public List<yiyecek> yemekler;
+            public Dictionary<string, decimal> ingredientPrices; // Malzeme fiyatlarını tutan sözlük
+            public List<yiyecek> yemekler; // Yiyecekleri tutan liste
 
 
             public FoodPriceCalculator(Dictionary<string, decimal> ingredientPrices, List<yiyecek> yemekler)
@@ -46,6 +46,8 @@ namespace ndp_proje_2023
 
             }
 
+            // Siparişin satış fiyatını hesaplayan metot
+            // bu metodda satış fiyatları o yemeğin malzemelerinin fiyatları toplamının ile hesaplanır ve üzerine kdv oranı eklenerek son fiyatı belirlenir.
             public decimal CalculateSellingPrice(yiyecek foodItem)
             {
                 decimal totalPrice = 0;
@@ -62,13 +64,14 @@ namespace ndp_proje_2023
                     }
                 }
 
-                // Assuming KDV is a percentage (e.g., 8%)
+                // KDV oranını hesaplayıp satış fiyatını döndür
                 decimal kdvRate = Convert.ToDecimal(foodItem.yiyecekKDVOrani);
                 decimal sellingPrice = totalPrice * (1 + kdvRate / 100);
 
                 return sellingPrice;
             }
 
+            // Sipariş listesinin toplam satış fiyatını hesaplayan metot
             public decimal CalculateSellingPrice(List<string> siparisListesi)
             {
                 decimal totalPrice = 0;
@@ -95,7 +98,8 @@ namespace ndp_proje_2023
                 string json = File.ReadAllText("yemekler.json");
                 List<yiyecek> yemekList = JsonSerializer.Deserialize<List<yiyecek>>(json);
 
-                // Populate the ingredientPrices dictionary with ingredient names and their prices
+                        // Malzeme isimleri ve fiyatlarını içeren ingredientPrices sözlüğünü doldur
+
                 foreach (var yemek in yemekList)
                 {
                     foreach (var ingredient in yemek.Malzemeler)
@@ -110,7 +114,7 @@ namespace ndp_proje_2023
                 List<yiyecek> yemekAdList = new List<yiyecek>();
                 Random random = new Random();
 
-                // Create an instance of FoodPriceCalculator
+                // FoodPriceCalculator sınıfının bir örneğini oluştur
                 FoodPriceCalculator priceCalculator = new FoodPriceCalculator(ingredientPrices, yemekler);
 
                 foreach (var yemek in yemekList)
@@ -123,8 +127,8 @@ namespace ndp_proje_2023
                     yemek.Ad = yemekAd;
                     yemekAdList.Add(yemek);
 
-                    // Calculate the selling price of the yemek and display it
-                    decimal sellingPrice = priceCalculator.CalculateSellingPrice(yemek); // Use the existing priceCalculator here
+                // yemeğin satış fiyatını hesapla ve ekrana yazdır
+                    decimal sellingPrice = priceCalculator.CalculateSellingPrice(yemek); // Burada mevcut priceCalculator'ı kullan
                     Console.WriteLine($"Yemek: {yemek.Ad}, Satış Fiyatı: {sellingPrice:F2}");
                 }
 
@@ -134,6 +138,7 @@ namespace ndp_proje_2023
 
                 yemekler = yemekAdList;
             }
+            // Yemekler yüklenirken bir hata oluştuşsa bu hatayı ekrana yazdır
             catch (Exception ex)
             {
                 MessageBox.Show("Yemekler yüklenirken bir hata oluştu: " + ex.Message);
@@ -142,7 +147,7 @@ namespace ndp_proje_2023
 
 
 
-
+        // tüm yiyeceklerin fonksiyonları aynı şekildedir siparis'e butonun text i eklenerek seçilen yemek alınmış olur sonrasında yemekEkle fonksiyonu çağırılır ve siparis değişkenine alınan yemek adı siparisListesi listesine eklenir. 
         private void yesilsalatabtn_Click(object sender, EventArgs e)
         {
             string siparis = yesilsalatabtn.Text;
@@ -319,20 +324,22 @@ namespace ndp_proje_2023
             siparisInstance.yemekEkle(siparisListesi, new List<string> { siparis }, this);
         }
 
+        // yeni bir groupbox oluştur ve ürünleri içine attıktan sonra silinecekleri seçer ve onayladıktan sonra siparisleri siler. Aynı zamanda hem yetkili ekranından hemde sipariş ekranındaki sipariş txt boxundan silmektedir.
         private void silButton_Click(object sender, EventArgs e)
         {
+            // Sipariş listesi boş ise hata mesajı göster ve metottan çık
             if (siparisListesi.Count == 0)
             {
                 MessageBox.Show("Sipariş listesi boş.");
                 return;
             }
-
-            GroupBox groupBox = new GroupBox // Move the declaration here
+            // GroupBox oluştur
+            GroupBox groupBox = new GroupBox 
             {
                 Text = "Silinecek Ürünleri Seçin",
                 Dock = DockStyle.Fill
             };
-
+            //silForm'u çağırır ve içine groupbox ve sil butonunu ekler
             using (var silForm = new Form())
             {
                 foreach (var siparis in siparisListesi)
@@ -345,7 +352,7 @@ namespace ndp_proje_2023
                     groupBox.Controls.Add(checkBox);
                     checkBoxes.Add(checkBox);
                 }
-
+                // Sil butonu tanımlanır ve metodu yazılır burada deneme amaçlı olarak forms üzerinde form oluşturarak değil kod üzerinden panel oluşturma denenmiştir.
                 var silButton = new Button
                 {
                     Text = "Seçilen Ürünleri Sil",
@@ -374,26 +381,28 @@ namespace ndp_proje_2023
             }
         }
 
+        // Sipariş onay butonuna tıklanma methodu
         private void siparisonaybtn_Click(object sender, EventArgs e)
     {
         YemekleriYukle();
         MessageBox.Show("Siparişiniz:\r\n" + string.Join(Environment.NewLine, siparisListesi));
 
-        // Calculate the total price using the CalculateTotalPrice method
+        // CalculateTotalPrice metodu ile toplam fiyat hesaplanır ve lblFiyat label'ına yazdırılır
+        
         decimal totalPrice = CalculateTotalPrice();
 
-        // Calculate the selling price of selectedFoodItem using the FoodPriceCalculator
+        // Seçilen ürünlerin fiyatlarını hesapla
         FoodPriceCalculator priceCalculator = new FoodPriceCalculator(ingredientPrices, yemekler);
         decimal sellingPrice = priceCalculator.CalculateSellingPrice(siparisListesi);
 
         string totalPriceText = totalPrice.ToString("F2");
         UpdateFiyatLabel(totalPriceText);
 
-        // Display the calculated selling price in the lblFiyat label
+        // lblFiyat label'ına fiyat yazdırılır
         string sellingPriceText = sellingPrice.ToString("F2");
         lblFiyat.Text = $"Toplam Fiyat: {totalPriceText} TL\nSatış Fiyatı: {sellingPriceText} TL";
 
-        // Pass the necessary parameters to yetkiliekrani constructor
+        // siparişin yetkili ekranında gösterilmesi için gerekli olan parametreler aktarılır
         yetkiliekrani yetkiliekraniForm = new yetkiliekrani(siparisListesi, yemekler, depo);
         yetkiliekraniForm.Show();
     }
@@ -402,10 +411,13 @@ namespace ndp_proje_2023
         {
 
         }
+
+        // lblFiyat label'ını (toplam fiyatın yazıldığı label) günceller
         public void UpdateFiyatLabel(string fiyat)
         {
             lblFiyat.Text = fiyat;
         }
+        // CalculateTotalPrice metodu ile toplam fiyat hesaplanır yemekler listesinden yemeğin Ad değişkenini alır ve kendi içerisindeki yiyecekFiyat tnaımlamasından yiyeceğin fiyatını alır malzeme fiyatlarını ekler ve işlemi yaparak toplam fiyatı bulup totalPrice olarak return eder.
         public decimal CalculateTotalPrice()
         {
             decimal totalPrice = 0;

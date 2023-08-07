@@ -4,6 +4,10 @@ using System.Windows.Forms;
 
 namespace ndp_proje_2023
 {
+    /*
+    bu class üzerinde ise menüye yeni ürün ekleme fonksiyonları vardır ürün adı ve ürün içerikleri tek tek satırlar halinde girilir ve yemek adı yemekler.txt dosyasına ## yemekadı ## şeklinde eklenir ve malzemeler de aynı şekilde malzemeler.txt dosyasına eklenir
+    */
+    
     public partial class yeniurunformu : Form
     {
         public yeniurunformu()
