@@ -1,30 +1,5 @@
-## Yeşil Salata ##
-## Çoban Salata ##
-## Sezar Salata ##
-## İstanbul Salata ##
-## Van Salata ##
-## Cola ##
-## Fanta ##
-## Ayran ##
-## Su ##
-## Çay ##
-## Elma ##
-## Armut ##
-## Muz ##
-## Kivi ##
-## Ejder Meyvesi ##
-## Kemal Paşa ##
-## Magnolya ##
-## Künefe ##
-## Waffle ##
-## Et Sote ##
-## Tantuni ##
-## Mantı ##
-## Tavuklu Pilav ##
-## Etli Makarna ##
-## Tavuk Göğsü ##
-## Beyran ##
-
-## Çiğ Köfte ##
-## Sucuklu Yumurta ##
-## Gözleme ##
+## taha ##
+## asd ##
+## asd ##
+## asd ##
+## asd ##

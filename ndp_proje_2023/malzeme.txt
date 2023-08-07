@@ -1,95 +1,15 @@
-Roka
-Marul
-Salatalık
-Domates
-Biber
-Zeytinyağı
-Limon
-Tuz
-Salatalık
-Domates
-Yeşil biber
-Kuru soğan
-Zeytinyağı
-Limon
-Tuz
-Karabiber
-Romaine marul
-Tavuk göğsü
-Kruton
-Parmesan peyniri
-Sezar sosu
-Domates
-Salatalık
-Soğan
-Biber
-Zeytinyağı
-Nar ekşisi
-Tuz
-Kabak
-Nane
-Tere
-Taze soğan
-Yoğurt
-Sarımsak
-Tuz
-Cola
-Fanta
-Yoğurt
-Su
-Tuz
-Su
-Çay
-Elma
-Armut
-Muz
-Kivi
-Ejder Meyves
-Kemal Paşa
-Şerbet
-Kaymak
-Bisküvi
-Krema
-Çilek
-Tel Kadayıf
-Sadeyağ
-İnce Çekilmiş Antep Fıstığı
-Kaymak
-waffle
-meyveler
-Eti (dana, tavuk, vb.)
-Sebzeler (soğan, biber, domates, vb.)
-Baharatlar
-Tavuk veya dana eti
-Soğan
-Domates
-Biber
-Sumak
-Lavaş ekmeği
-Kıyma
-Soğan
-Baharatlar
-Mantı hamuru
-Tavuk eti
-Pirinç
-Soğan
-Baharatlar
-Eti (dana, tavuk, vb.)
-Makarna
-Domates sosu
-Baharatlar
-Süt 
-Nişasta
-Şeker
-Et
-Salça
-Baharat
-Bulgur
-Bulgur
-Su
-Salça
-Baharat
-sucuk
-Yumurta
-Hamur
-Peynir
+a
+b
+c
+d
+
+asd
+dsa
+asd
+
+asd
+dsa
+asd
+
+asdasd
+asdasd
